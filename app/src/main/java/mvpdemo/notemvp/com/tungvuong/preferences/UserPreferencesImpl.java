@@ -9,9 +9,10 @@ import com.google.gson.reflect.TypeToken;
 import java.util.ArrayList;
 import java.util.List;
 
+import mvpdemo.notemvp.com.tungvuong.MainContract;
 import mvpdemo.notemvp.com.tungvuong.models.Note;
 
-public class UserPreferencesImpl implements UserPreferences {
+public class UserPreferencesImpl implements MainContract.UserPreferences {
 
     protected SharedPreferences mPreferences;
 

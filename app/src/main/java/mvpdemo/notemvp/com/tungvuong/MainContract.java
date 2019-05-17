@@ -15,6 +15,16 @@ public interface MainContract {
         void clearEdittext();
 
     }
+
+    interface UserPreferences { String NOTES_LIST = "notes_list";
+
+        void addNote(Note note);
+
+        void removeNote(Note note);
+
+        List<Note> getNotes();
+
+    }
     interface Presenter {
 
         void onStop();

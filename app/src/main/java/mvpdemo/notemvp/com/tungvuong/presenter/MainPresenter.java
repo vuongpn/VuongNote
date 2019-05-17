@@ -8,14 +8,13 @@ import java.util.Date;
 
 import mvpdemo.notemvp.com.tungvuong.MainContract;
 import mvpdemo.notemvp.com.tungvuong.models.Note;
-import mvpdemo.notemvp.com.tungvuong.preferences.UserPreferences;
 import mvpdemo.notemvp.com.tungvuong.preferences.UserPreferencesImpl;
 import mvpdemo.notemvp.com.tungvuong.Adapters.NotesAdapter;
 
 public class MainPresenter extends AbstractPresenter implements NotesAdapter.NoteDeleteListener {
 
     private MainContract.MainActivityView mView;
-    UserPreferences mDatabase = new UserPreferencesImpl();
+    MainContract.UserPreferences mDatabase = (MainContract.UserPreferences) new UserPreferencesImpl();
     SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/MM/yyy hh:mm a");
 
     public MainPresenter(MainContract.MainActivityView mView) {
