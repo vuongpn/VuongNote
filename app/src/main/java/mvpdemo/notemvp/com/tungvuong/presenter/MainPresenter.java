@@ -11,10 +11,10 @@ import mvpdemo.notemvp.com.tungvuong.MainContract;
 import mvpdemo.notemvp.com.tungvuong.models.Note;
 import mvpdemo.notemvp.com.tungvuong.preferences.UserPreferencesImpl;
 
-public class MainPresenter  implements NotesAdapter.NoteDeleteListener {
+public class MainPresenter implements NotesAdapter.NoteDeleteListener, MainContract.Presenter {
 
     private MainContract.MainActivityView mView;
-    MainContract.UserPreferences mDatabase = (MainContract.UserPreferences) new UserPreferencesImpl();
+    MainContract.UserPreferences mDatabase = new UserPreferencesImpl();
     SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/MM/yyy hh:mm a");
 
     public MainPresenter(MainContract.MainActivityView mView) {
@@ -39,5 +39,15 @@ public class MainPresenter  implements NotesAdapter.NoteDeleteListener {
     @Override
     public void onNoteDeleteClicked(Note note) {
         mDatabase.removeNote(note);
+    }
+
+    @Override
+    public void onStop() {
+
+    }
+
+    @Override
+    public void onStart() {
+
     }
 }
