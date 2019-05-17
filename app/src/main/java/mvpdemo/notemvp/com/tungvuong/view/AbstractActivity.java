@@ -8,7 +8,7 @@ import android.widget.Toast;
 
 import mvpdemo.notemvp.com.tungvuong.MainContract;
 
-public abstract class AbstractActivity extends AppCompatActivity implements MainContract.MainView {
+public abstract class AbstractActivity extends AppCompatActivity implements MainContract.MainActivityView {
     private ProgressDialog mDialog;
 
     @Override
@@ -52,23 +52,5 @@ public abstract class AbstractActivity extends AppCompatActivity implements Main
         Toast.makeText(this, text, Toast.LENGTH_LONG).show();
     }
 
-    @Override
-    public void startLoading() {
-        if (mDialog != null && mDialog.isShowing()) {
-            return;
-        }
-        mDialog = new ProgressDialog(this);
-        mDialog.setMessage("Đang tải...");
-        mDialog.setCancelable(false);
-        mDialog.show();
-
-    }
-
-    @Override
-    public void stopLoading() {
-        if (mDialog != null && mDialog.isShowing()) {
-            mDialog.dismiss();
-        }
-    }
 
 }

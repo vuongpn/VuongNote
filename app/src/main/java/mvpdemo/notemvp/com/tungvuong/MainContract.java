@@ -5,13 +5,7 @@ import java.util.List;
 import mvpdemo.notemvp.com.tungvuong.models.Note;
 
 public interface MainContract {
-    interface MainView {
 
-        void startLoading();
-
-        void stopLoading();
-
-    }
     interface MainActivityView {
 
         void showError(String msg);
