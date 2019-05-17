@@ -1,6 +1,8 @@
 package mvpdemo.notemvp.com.tungvuong.view;
 
 import android.os.Bundle;
+import android.support.v4.content.ContextCompat;
+import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
@@ -10,13 +12,13 @@ import android.widget.EditText;
 import java.util.ArrayList;
 import java.util.List;
 
+import mvpdemo.notemvp.com.tungvuong.MainContract;
 import mvpdemo.notemvp.com.tungvuong.R;
 import mvpdemo.notemvp.com.tungvuong.models.Note;
 import mvpdemo.notemvp.com.tungvuong.Adapters.NotesAdapter;
 import mvpdemo.notemvp.com.tungvuong.presenter.MainPresenter;
-import mvpdemo.notemvp.com.tungvuong.presenter.Presenter;
 
-public class MainActivity extends AbstractActivity implements MainActivityView {
+public class MainActivity extends AbstractActivity implements MainContract.MainActivityView {
     Button btnAddNote;
     EditText edtNote;
     RecyclerView recyclerViewNote;
@@ -38,7 +40,7 @@ public class MainActivity extends AbstractActivity implements MainActivityView {
     }
 
     @Override
-    Presenter getPresenter() {
+    MainContract.Presenter getPresenter() {
         return mPresenter;
     }
 
@@ -57,6 +59,8 @@ public class MainActivity extends AbstractActivity implements MainActivityView {
         recyclerViewNote.setLayoutManager(new LinearLayoutManager(this));
         mAdapter = new NotesAdapter(new ArrayList<Note>(), mPresenter);
         recyclerViewNote.setAdapter(mAdapter);
+        DividerItemDecoration dividerItemDecoration=new DividerItemDecoration(this,DividerItemDecoration.VERTICAL);
+        dividerItemDecoration.setDrawable(ContextCompat.getDrawable(this,R.drawable.divider_blue));
     }
 
     @Override

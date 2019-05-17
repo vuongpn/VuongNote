@@ -6,19 +6,19 @@ import android.text.TextUtils;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+import mvpdemo.notemvp.com.tungvuong.MainContract;
 import mvpdemo.notemvp.com.tungvuong.models.Note;
 import mvpdemo.notemvp.com.tungvuong.preferences.UserPreferences;
 import mvpdemo.notemvp.com.tungvuong.preferences.UserPreferencesImpl;
 import mvpdemo.notemvp.com.tungvuong.Adapters.NotesAdapter;
-import mvpdemo.notemvp.com.tungvuong.view.MainActivityView;
 
 public class MainPresenter extends AbstractPresenter implements NotesAdapter.NoteDeleteListener {
 
-    private MainActivityView mView;
+    private MainContract.MainActivityView mView;
     UserPreferences mDatabase = new UserPreferencesImpl();
     SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/MM/yyy hh:mm a");
 
-    public MainPresenter(MainActivityView mView) {
+    public MainPresenter(MainContract.MainActivityView mView) {
         this.mView = mView;
     }
 

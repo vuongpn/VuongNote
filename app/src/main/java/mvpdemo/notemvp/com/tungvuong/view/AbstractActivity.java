@@ -5,9 +5,10 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.Toast;
-import mvpdemo.notemvp.com.tungvuong.presenter.Presenter;
 
-public abstract class AbstractActivity extends AppCompatActivity implements View {
+import mvpdemo.notemvp.com.tungvuong.MainContract;
+
+public abstract class AbstractActivity extends AppCompatActivity implements MainContract.MainView {
     private ProgressDialog mDialog;
 
     @Override
@@ -16,7 +17,7 @@ public abstract class AbstractActivity extends AppCompatActivity implements View
 
     }
 
-    abstract Presenter getPresenter();
+    abstract MainContract.Presenter getPresenter();
 
     @Override
     protected void onStart() {
