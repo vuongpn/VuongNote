@@ -60,7 +60,7 @@
             android:layout_height="@dimen/_32sdp"
             android:padding="@dimen/_8sdp"
             android:rotation="45"
-            android:layout_gravity="top"
+            android:layout_gravity="right"
             android:src="@drawable/ic_close" />
 
     </LinearLayout>

@@ -57,6 +57,7 @@ public class MainActivity extends AppCompatActivity implements MainContract.Main
         recyclerViewNote.setAdapter(mAdapter);
         DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(this, DividerItemDecoration.VERTICAL);
         dividerItemDecoration.setDrawable(ContextCompat.getDrawable(this, R.drawable.divider_blue));
+        recyclerViewNote.addItemDecoration(dividerItemDecoration);
     }
 
     @Override
