@@ -2,6 +2,7 @@ package mvpdemo.notemvp.com.tungvuong.view;
 
 import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -18,7 +19,7 @@ import mvpdemo.notemvp.com.tungvuong.R;
 import mvpdemo.notemvp.com.tungvuong.models.Note;
 import mvpdemo.notemvp.com.tungvuong.presenter.MainPresenter;
 
-public class MainActivity extends AbstractActivity implements MainContract.MainActivityView {
+public class MainActivity extends AppCompatActivity implements MainContract.MainActivityView {
     Button btnAddNote;
     EditText edtNote;
     RecyclerView recyclerViewNote;
@@ -37,11 +38,6 @@ public class MainActivity extends AbstractActivity implements MainContract.MainA
         initRecyclerView();
         mPresenter.onCreate(getIntent());
 
-    }
-
-    @Override
-    MainContract.Presenter getPresenter() {
-        return mPresenter;
     }
 
     private void initListener() {
@@ -64,6 +60,11 @@ public class MainActivity extends AbstractActivity implements MainContract.MainA
     }
 
     @Override
+    public void showError(String msg) {
+
+    }
+
+    @Override
     public void setAdapter(List<Note> noteList) {
         mAdapter.updateAdapter(noteList);
     }
@@ -72,11 +73,5 @@ public class MainActivity extends AbstractActivity implements MainContract.MainA
     public void clearEdittext() {
         edtNote.setText("");
     }
-
-    @Override
-    public void showError(String msg) {
-        showToast(msg);
-    }
-
 
 }

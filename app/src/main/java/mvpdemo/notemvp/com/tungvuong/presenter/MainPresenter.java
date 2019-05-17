@@ -11,7 +11,7 @@ import mvpdemo.notemvp.com.tungvuong.MainContract;
 import mvpdemo.notemvp.com.tungvuong.models.Note;
 import mvpdemo.notemvp.com.tungvuong.preferences.UserPreferencesImpl;
 
-public class MainPresenter extends AbstractPresenter implements NotesAdapter.NoteDeleteListener {
+public class MainPresenter  implements NotesAdapter.NoteDeleteListener {
 
     private MainContract.MainActivityView mView;
     MainContract.UserPreferences mDatabase = (MainContract.UserPreferences) new UserPreferencesImpl();
