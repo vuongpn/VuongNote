@@ -14,7 +14,7 @@ import mvpdemo.notemvp.com.tungvuong.models.Note;
 
 public class UserPreferencesImpl implements MainContract.UserPreferences {
 
-    protected SharedPreferences mPreferences;
+     private SharedPreferences mPreferences;
 
     public UserPreferencesImpl() {
         this.mPreferences = PreferencesProvider.providePreferences();
