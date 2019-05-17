@@ -53,13 +53,13 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.NoteHolder> 
         notifyDataSetChanged();
     }
 
-    public class NoteHolder extends RecyclerView.ViewHolder {
+    class NoteHolder extends RecyclerView.ViewHolder {
 
         View viewIndicator;
         TextView tvNote, tvDate;
         ImageView imgDelete;
 
-        public NoteHolder(View itemView) {
+        NoteHolder(View itemView) {
             super(itemView);
             setIsRecyclable(false);
             viewIndicator = itemView.findViewById(R.id.viewIndicator);
