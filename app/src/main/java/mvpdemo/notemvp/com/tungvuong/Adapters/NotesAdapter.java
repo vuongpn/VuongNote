@@ -79,7 +79,7 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.NoteHolder> 
 
     }
 
-    public interface NoteDeleteListener{
+    public interface NoteDeleteListener {
         void onNoteDeleteClicked(Note note);
     }
 

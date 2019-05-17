@@ -16,7 +16,8 @@ public interface MainContract {
 
     }
 
-    interface UserPreferences { String NOTES_LIST = "notes_list";
+    interface UserPreferences {
+        String NOTES_LIST = "notes_list";
 
         void addNote(Note note);
 
@@ -25,6 +26,7 @@ public interface MainContract {
         List<Note> getNotes();
 
     }
+
     interface Presenter {
 
         void onStop();

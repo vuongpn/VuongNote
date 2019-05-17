@@ -12,10 +12,10 @@ import android.widget.EditText;
 import java.util.ArrayList;
 import java.util.List;
 
+import mvpdemo.notemvp.com.tungvuong.Adapters.NotesAdapter;
 import mvpdemo.notemvp.com.tungvuong.MainContract;
 import mvpdemo.notemvp.com.tungvuong.R;
 import mvpdemo.notemvp.com.tungvuong.models.Note;
-import mvpdemo.notemvp.com.tungvuong.Adapters.NotesAdapter;
 import mvpdemo.notemvp.com.tungvuong.presenter.MainPresenter;
 
 public class MainActivity extends AbstractActivity implements MainContract.MainActivityView {
@@ -59,8 +59,8 @@ public class MainActivity extends AbstractActivity implements MainContract.MainA
         recyclerViewNote.setLayoutManager(new LinearLayoutManager(this));
         mAdapter = new NotesAdapter(new ArrayList<Note>(), mPresenter);
         recyclerViewNote.setAdapter(mAdapter);
-        DividerItemDecoration dividerItemDecoration=new DividerItemDecoration(this,DividerItemDecoration.VERTICAL);
-        dividerItemDecoration.setDrawable(ContextCompat.getDrawable(this,R.drawable.divider_blue));
+        DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(this, DividerItemDecoration.VERTICAL);
+        dividerItemDecoration.setDrawable(ContextCompat.getDrawable(this, R.drawable.divider_blue));
     }
 
     @Override
@@ -77,7 +77,6 @@ public class MainActivity extends AbstractActivity implements MainContract.MainA
     public void showError(String msg) {
         showToast(msg);
     }
-
 
 
 }

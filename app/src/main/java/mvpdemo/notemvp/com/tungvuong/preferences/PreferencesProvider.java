@@ -13,6 +13,8 @@ public class PreferencesProvider {
         return sPreferences;
     }
 
-    public static void init(Context context) { sPreferences = context.getSharedPreferences(SHARED_PREFERENCES, Context.MODE_PRIVATE); }
+    public static void init(Context context) {
+        sPreferences = context.getSharedPreferences(SHARED_PREFERENCES, Context.MODE_PRIVATE);
+    }
 
 }

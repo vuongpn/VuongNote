@@ -1,6 +1,5 @@
 package mvpdemo.notemvp.com.tungvuong.view;
 
-import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
@@ -9,7 +8,6 @@ import android.widget.Toast;
 import mvpdemo.notemvp.com.tungvuong.MainContract;
 
 public abstract class AbstractActivity extends AppCompatActivity implements MainContract.MainActivityView {
-    private ProgressDialog mDialog;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
