@@ -29,10 +29,6 @@ public interface MainContract {
 
     interface Presenter {
 
-        void onStop();
-
-        void onStart();
-
     }
 
 }

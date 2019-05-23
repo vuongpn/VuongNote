@@ -13,13 +13,11 @@ import mvpdemo.notemvp.com.tungvuong.MainContract;
 import mvpdemo.notemvp.com.tungvuong.models.Note;
 
 public class UserPreferencesImpl implements MainContract.UserPreferences {
-
-     private SharedPreferences mPreferences;
+    private SharedPreferences mPreferences;
 
     public UserPreferencesImpl() {
         this.mPreferences = PreferencesProvider.providePreferences();
     }
-
 
     @Override
     public void addNote(Note note) {
@@ -41,7 +39,6 @@ public class UserPreferencesImpl implements MainContract.UserPreferences {
                 break;
             }
         }
-
         if (dbNotes.size() > 0) {
             String noteAsString = new Gson().toJson(dbNotes);
             mPreferences.edit().putString(NOTES_LIST, noteAsString).apply();
@@ -60,7 +57,6 @@ public class UserPreferencesImpl implements MainContract.UserPreferences {
             notes = new Gson().fromJson(noteListString, new TypeToken<List<Note>>() {
             }.getType());
         }
-
         return notes;
     }
 

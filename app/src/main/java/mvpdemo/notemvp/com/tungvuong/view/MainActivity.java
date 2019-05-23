@@ -13,19 +13,18 @@ import android.widget.EditText;
 import java.util.ArrayList;
 import java.util.List;
 
-import mvpdemo.notemvp.com.tungvuong.Adapters.NotesAdapter;
 import mvpdemo.notemvp.com.tungvuong.MainContract;
 import mvpdemo.notemvp.com.tungvuong.R;
+import mvpdemo.notemvp.com.tungvuong.adapters.NotesAdapter;
 import mvpdemo.notemvp.com.tungvuong.models.Note;
 import mvpdemo.notemvp.com.tungvuong.presenter.MainPresenter;
 
 public class MainActivity extends AppCompatActivity implements MainContract.MainActivityView {
-    Button btnAddNote;
-    EditText edtNote;
-    RecyclerView recyclerViewNote;
-
-    MainPresenter mPresenter = new MainPresenter(this);
-    NotesAdapter mAdapter;
+    private Button btnAddNote;
+    private EditText edtNote;
+    private RecyclerView recyclerViewNote;
+    private MainPresenter mPresenter = new MainPresenter(this);
+    private NotesAdapter mAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,13 +35,10 @@ public class MainActivity extends AppCompatActivity implements MainContract.Main
         recyclerViewNote = findViewById(R.id.recyclerViewNote);
         initListener();
         initRecyclerView();
-        mPresenter.onCreate(getIntent());
-
+        mPresenter.onCreate();
     }
 
     private void initListener() {
-
-
         btnAddNote.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

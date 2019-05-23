@@ -4,9 +4,7 @@ import android.content.Context;
 import android.content.SharedPreferences;
 
 public class PreferencesProvider {
-
     private static final String SHARED_PREFERENCES = "mvpPreferences";
-
     private static SharedPreferences sPreferences;
 
     static SharedPreferences providePreferences() {

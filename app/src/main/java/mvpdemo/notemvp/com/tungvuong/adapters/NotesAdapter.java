@@ -1,4 +1,4 @@
-package mvpdemo.notemvp.com.tungvuong.Adapters;
+package mvpdemo.notemvp.com.tungvuong.adapters;
 
 import android.graphics.Color;
 import android.support.v7.widget.RecyclerView;
@@ -15,7 +15,6 @@ import mvpdemo.notemvp.com.tungvuong.R;
 import mvpdemo.notemvp.com.tungvuong.models.Note;
 
 public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.NoteHolder> {
-
     private List<Note> noteList;
     private NoteDeleteListener noteDeleteListener;
 
@@ -32,10 +31,8 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.NoteHolder> 
     @Override
     public void onBindViewHolder(NoteHolder holder, int position) {
         Note item = noteList.get(position);
-
         holder.tvNote.setText(item.getNote());
         holder.tvDate.setText(item.getDate());
-
         Random rnd = new Random();
         int color = Color.argb(255, rnd.nextInt(256), rnd.nextInt(256), rnd.nextInt(256));
         holder.viewIndicator.setBackgroundColor(color);
@@ -54,7 +51,6 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.NoteHolder> 
     }
 
     class NoteHolder extends RecyclerView.ViewHolder {
-
         View viewIndicator;
         TextView tvNote, tvDate;
         ImageView imgDelete;
@@ -66,7 +62,6 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.NoteHolder> 
             tvNote = itemView.findViewById(R.id.tvNote);
             tvDate = itemView.findViewById(R.id.tvDate);
             imgDelete = itemView.findViewById(R.id.imgDelete);
-
             imgDelete.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
