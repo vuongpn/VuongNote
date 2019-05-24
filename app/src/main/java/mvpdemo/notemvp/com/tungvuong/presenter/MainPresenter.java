@@ -30,7 +30,7 @@ public class MainPresenter implements NotesAdapter.NoteDeleteListener, MainContr
         } else {
             mDatabase.addNote(new Note(System.currentTimeMillis(), note, simpleDateFormat.format(new Date())));
             mView.setAdapter(mDatabase.getNotes());
-            mView.clearEdittext();
+            mView.clearEdt();
         }
     }
 

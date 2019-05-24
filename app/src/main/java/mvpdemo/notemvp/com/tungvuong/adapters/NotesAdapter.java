@@ -51,9 +51,9 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.NoteHolder> 
     }
 
     class NoteHolder extends RecyclerView.ViewHolder {
-        View viewIndicator;
-        TextView tvNote, tvDate;
-        ImageView imgDelete;
+        private View viewIndicator;
+        private TextView tvNote, tvDate;
+        private ImageView imgDelete;
 
         NoteHolder(View itemView) {
             super(itemView);

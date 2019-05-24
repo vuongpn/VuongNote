@@ -12,7 +12,7 @@ public interface MainContract {
 
         void setAdapter(List<Note> notes);
 
-        void clearEdittext();
+        void clearEdt();
 
     }
 

@@ -23,28 +23,28 @@
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/_4sdp"
             android:layout_marginLeft="@dimen/_12sdp"
             android:layout_marginTop="@dimen/_4sdp"
+            android:layout_marginBottom="@dimen/_4sdp"
             android:layout_weight="1"
             android:orientation="vertical">
 
             <TextView
                 android:id="@+id/tvNote"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="0dp"
                 android:layout_weight="1"
+                android:ellipsize="end"
                 android:fontFamily="sans-serif"
-                tools:text="@tools:sample/lorem"
-                android:textColor="@color/black"
-                android:textSize="16dp"
                 android:maxLines="5"
                 android:singleLine="false"
-                android:ellipsize="end"/>
+                android:textColor="@color/black"
+                android:textSize="16dp"
+                tools:text="@tools:sample/lorem" />
 
             <TextView
                 android:id="@+id/tvDate"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_4sdp"
                 android:fontFamily="sans-serif"
@@ -58,9 +58,9 @@
             android:id="@+id/imgDelete"
             android:layout_width="@dimen/_32sdp"
             android:layout_height="@dimen/_32sdp"
+            android:layout_gravity="right"
             android:padding="@dimen/_8sdp"
             android:rotation="45"
-            android:layout_gravity="right"
             android:src="@drawable/ic_close" />
 
     </LinearLayout>
