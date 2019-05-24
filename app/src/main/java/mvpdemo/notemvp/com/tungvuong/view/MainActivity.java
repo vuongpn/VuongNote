@@ -44,6 +44,7 @@ public class MainActivity extends AppCompatActivity implements MainContract.Main
 
     private void initRecyclerView() {
         recyclerViewNote.setLayoutManager(new LinearLayoutCustom(this));
+        recyclerViewNote.smoothScrollToPosition(recyclerViewNote.getHeight());
         mAdapter = new NotesAdapter(new ArrayList<Note>(), mPresenter);
         recyclerViewNote.setAdapter(mAdapter);
     }
