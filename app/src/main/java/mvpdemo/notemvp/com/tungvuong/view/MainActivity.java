@@ -1,16 +1,18 @@
 package mvpdemo.notemvp.com.tungvuong.view;
+
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+
 import java.util.ArrayList;
 import java.util.List;
+
 import mvpdemo.notemvp.com.tungvuong.MainContract;
 import mvpdemo.notemvp.com.tungvuong.R;
 import mvpdemo.notemvp.com.tungvuong.adapters.NotesAdapter;
-import mvpdemo.notemvp.com.tungvuong.custom.GridLayoutCustom;
 import mvpdemo.notemvp.com.tungvuong.custom.LinearLayoutCustom;
 import mvpdemo.notemvp.com.tungvuong.models.Note;
 import mvpdemo.notemvp.com.tungvuong.presenter.MainPresenter;
@@ -44,8 +46,7 @@ public class MainActivity extends AppCompatActivity implements MainContract.Main
     }
 
     private void initRecyclerView() {
-        recyclerViewNote.setLayoutManager(new GridLayoutCustom(this,2));
-        recyclerViewNote.smoothScrollToPosition(0);
+        recyclerViewNote.setLayoutManager(new LinearLayoutCustom(this));
         mAdapter = new NotesAdapter(new ArrayList<Note>(), mPresenter);
         recyclerViewNote.setAdapter(mAdapter);
     }
